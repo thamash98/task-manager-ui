@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { task } from '../models/tasks.model';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,5 +21,18 @@ export class TasksService {
     addTaskRequest.id = 0;
     return this.http.post<task>(this.baseApiUrl + '/api/tasks',
     addTaskRequest);
+  }
+
+  getTaskById(id: string):Observable<task>{
+    debugger;
+    return this.http.get<task>(this.baseApiUrl + '/api/tasks/'+ id);
+  }
+
+  updateTask(id: string, updateTaskRequest: task):Observable<task>{
+    return this.http.put<task>(this.baseApiUrl + '/api/tasks/'+ id,updateTaskRequest)
+  }
+
+  deleteTask(id: number):Observable<task>{
+    return this.http.delete<task>(this.baseApiUrl + '/api/tasks/'+ id);
   }
 }

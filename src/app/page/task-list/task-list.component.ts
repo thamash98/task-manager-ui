@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { task } from 'src/app/models/tasks.model';
 import { TasksService } from 'src/app/services/tasks.service';
 
@@ -9,7 +10,7 @@ import { TasksService } from 'src/app/services/tasks.service';
 })
 export class TaskListComponent implements OnInit{
   tasks: task[] = [];
-  constructor(private taskService: TasksService){}
+  constructor(private taskService: TasksService,private router: Router){}
 
   ngOnInit(): void {
     this.taskService.getAllTasks()
@@ -21,5 +22,14 @@ export class TaskListComponent implements OnInit{
         console.log(Response);
       }
     })
+  }
+
+  deleteTask(id:number){
+    this.taskService.deleteTask(id.valueOf())
+    .subscribe({
+      next:(response)=>{
+        this.router.navigate(['task-list'])
+      }
+    });
   }
 }
