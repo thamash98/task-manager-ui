@@ -1,0 +1,22 @@
+<div class="container my-5">
+    <h3 class="mb-3">Add New Task</h3>
+    <div class="row">
+        <div class="col-4">
+            <form #form="ngForm" (ngSubmit)="addTask()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" [(ngModel)]="addTaskRequest.title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" [(ngModel)]="addTaskRequest.description" cols="45" rows="5" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="dueDate" class="form-label">Due Date</label>
+                    <input class="form-control" type="date" id="dueDate" name="duedate" [(ngModel)]="addTaskRequest.duedate">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
