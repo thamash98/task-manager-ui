@@ -16,7 +16,7 @@
                 <td>{{task.id}}</td>
                 <td>{{task.title}}</td>
                 <td>{{task.description}}</td>
-                <td>{{task.duedate}}</td>
+                <td>{{task._DueDate}}</td>
                 <td><a [routerLink]="['/task-list','edit',task.id]">Edit</a></td>
                 <td>
                     <button class="btn btn-danger" (click)="deleteTask(task.id)">Delete</button>

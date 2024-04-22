@@ -14,7 +14,8 @@ export class TaskFormComponent implements OnInit{
     id: 0,
     title : '',
     description : '',
-    duedate : ''
+    DueDate : '',
+    _DueDate: ''
   }
   constructor(private taskService: TasksService, private router: Router){
 

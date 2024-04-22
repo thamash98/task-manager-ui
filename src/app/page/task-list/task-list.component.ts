@@ -17,6 +17,7 @@ export class TaskListComponent implements OnInit{
     .subscribe({
       next:(tasks) =>{
         this.tasks = tasks;
+        console.log(tasks);
       },
       error:(Response) =>{
         console.log(Response);

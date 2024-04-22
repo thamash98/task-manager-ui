@@ -14,6 +14,7 @@ export class TasksService {
   constructor(private http: HttpClient) { }
 
   getAllTasks() : Observable<task[]>{
+    debugger;
     return this.http.get<task[]>(this.baseApiUrl + '/api/tasks')
   }
 

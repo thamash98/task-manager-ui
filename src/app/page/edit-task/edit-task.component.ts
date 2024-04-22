@@ -14,7 +14,8 @@ export class EditTaskComponent implements OnInit {
     id: 0,
     title : '',
     description : '',
-    duedate : ''
+    DueDate : '',
+    _DueDate: ''
   }
 
   constructor(private route: ActivatedRoute, private taskService: 
